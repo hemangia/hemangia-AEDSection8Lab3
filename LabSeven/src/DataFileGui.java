@@ -13,6 +13,25 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+import java.awt.BorderLayout;
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -66,7 +85,8 @@ public class DataFileGui extends JFrame implements ActionListener {
 		buttonWrite.addActionListener(this);
 
 		area1 = new JTextArea("First 5 lines are");
-		area1.setBounds(50, 180, 700, 200);
+		area1.setBounds(50, 180, 700, 400);
+		area1.setLineWrap(true);
 
 		area2 = new JTextArea("First 5 lines are");
 		area2.setBounds(800, 180, 200, 200);
@@ -128,6 +148,7 @@ public class DataFileGui extends JFrame implements ActionListener {
 
 				for (Object o : op1) {
 					area1.append(o + "\n");
+					area1.append("\n");
 				}
 
 			}
