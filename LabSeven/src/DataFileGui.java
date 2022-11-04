@@ -69,12 +69,12 @@ public class DataFileGui extends JFrame implements ActionListener {
 		tf2 = new JTextField();
 		tf2.setBounds(1200, 80, 200, 20);
 
-		label3 = new JLabel("Please enter the input ");
-		label3.setBounds(800, 120, 200, 20);
+		label3 = new JLabel("Please enter the input in below text area ");
+		label3.setBounds(800, 120, 400, 20);
 		label3.setForeground(Color.BLUE);
 
-		tf3 = new JTextField();
-		tf3.setBounds(1200, 120, 200, 20);
+		//tf3 = new JTextField();
+		//tf3.setBounds(1200, 120, 200, 20);
 
 		buttonRead = new JButton("READ");
 		buttonRead.setBounds(50, 150, 200, 20);
@@ -88,8 +88,9 @@ public class DataFileGui extends JFrame implements ActionListener {
 		area1.setBounds(50, 180, 700, 400);
 		area1.setLineWrap(true);
 
-		area2 = new JTextArea("First 5 lines are");
-		area2.setBounds(800, 180, 200, 200);
+		area2 = new JTextArea();
+		area2.setBounds(800, 180, 700, 400);
+		area2.setLineWrap(true);
 
 		frame.add(button);
 		frame.add(button2);
@@ -98,7 +99,7 @@ public class DataFileGui extends JFrame implements ActionListener {
 		frame.add(label2);
 		frame.add(tf2);
 		frame.add(label3);
-		frame.add(tf3);
+		//frame.add(tf3);
 
 		frame.add(buttonRead);
 		frame.add(buttonWrite);
@@ -155,14 +156,14 @@ public class DataFileGui extends JFrame implements ActionListener {
 			// This is the method call for writing into file
 			if (e.getSource() == buttonWrite) {
 
-				frw.writeFile(tf2.getText(), tf3.getText());
-
+				frw.writeFile(tf2.getText(), area2.getText());
+/*
 				List<String> op3 = frw.readFirst(tf2.getText());
 				area2.append("\n");
 
 				for (Object o : op3) {
 					area2.append(o + "\n");
-				}
+				} */
 
 			}
 		} catch (IOException ex) {
